@@ -4,17 +4,21 @@
 }
 
 body {
+  overflow: hidden;
+  height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  background-color: black;
 }
 
-.grid {
+.board {
   border: 1px solid black;
   width: 900px;
   height: 900px;
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 
 .row {
@@ -24,5 +28,13 @@ body {
 
 .square {
   flex: 1;
-  border: 1px solid;
+  /* border: 1px solid; */
+}
+
+.clearing {
+  font-size: 20px;
+  border-radius: 8px;
+  background-color: chocolate;
+  border: 2px chocolate solid;
+  padding: 5px;
 }

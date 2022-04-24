@@ -31,10 +31,16 @@ body {
   /* border: 1px solid; */
 }
 
-.clearing {
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.clearing, .restart {
   font-size: 20px;
   border-radius: 8px;
-  background-color: chocolate;
-  border: 2px chocolate solid;
+  background-color: greenyellow;
+  border: 2px white solid;
   padding: 5px;
 }

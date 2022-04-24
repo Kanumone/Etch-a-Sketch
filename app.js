@@ -1,10 +1,12 @@
-const board = document.querySelector(".board");
+const menu = document.querySelector(".menu");
 const clearButton = document.querySelector(".clearing");
-const size = 50;
+const restartButton = document.querySelector(".restart");
 
-function makeGrid(size) {
+function makeBoard(size) {
+  let board = document.createElement('div');
   let result = new DocumentFragment();
-
+  
+  board.className = "board"
   for (let i = 0; i < size; i++) {
     let row = document.createElement("div");
     row.className = "row";
@@ -19,9 +21,9 @@ function makeGrid(size) {
 
       row.append(square);
     }
-    result.append(row);
+    board.append(row);
   }
-
+  result.append(board);
   return result;
 }
 
@@ -40,15 +42,20 @@ function setColor(element, color) {
 }
 
 // Make grid
-board.append(makeGrid(size));
+menu.after(makeBoard(askGridSize()));
 
 // Clearing
-const squares = document.querySelectorAll(".square");
-const boardSize = size ** 2;
-console.log(squares);
+
 
 clearButton.addEventListener("click", () => {
-  for (let i = 0; i < boardSize; i++) {
+  const squares = document.querySelectorAll(".square");
+  for (let i = 0; i < squares.length; i++) {
     setColor(squares[i], "white");
   }
 });
+
+restartButton.addEventListener("click", () => {
+  const board = document.querySelector(".board");
+  board.remove();
+  menu.after(makeBoard(askGridSize()));
+})

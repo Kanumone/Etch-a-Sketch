@@ -1,5 +1,5 @@
 const grid = document.querySelector(".grid");
-const size = 100;
+const size = askGridSize();
 
 function makeGrid(size) {
   let result = new DocumentFragment();
@@ -17,6 +17,16 @@ function makeGrid(size) {
   }
 
   return result;
+}
+
+function askGridSize() {
+  let size = prompt('Enter grid size(max value - 100):', 100);
+
+  if (size > 100) {
+    size = prompt('Enter grid size(max value - 100):', 100);
+  }
+
+  return size;
 }
 
 grid.append(makeGrid(size));

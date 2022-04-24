@@ -10,7 +10,7 @@ body {
 }
 
 .grid {
-  border: 2px solid black;
+  border: 1px solid black;
   width: 900px;
   height: 900px;
   display: flex;
@@ -24,4 +24,5 @@ body {
 
 .square {
   flex: 1;
+  border: 1px solid;
 }
